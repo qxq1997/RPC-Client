@@ -1,7 +1,7 @@
 package client;
 
-import Interface.HelloService;
-import Proxy.RpcClientProxy;
+import interfaces.HelloService;
+import proxy.RpcClientProxy;
 import entity.HelloObject;
 
 /**
