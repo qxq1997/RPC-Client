@@ -1,6 +1,6 @@
 package interfaces;
 
-import entity.HelloObject;
+import common.entity.HelloObject;
 
 /**
  * @author by QXQ

@@ -1,16 +1,21 @@
 package client;
 
+import common.entity.HelloObject;
 import interfaces.HelloService;
-import proxy.RpcClientProxy;
-import entity.HelloObject;
+import transport.RpcClient;
+import transport.RpcClientProxy;
+import transport.netty.NettyRpcClient;
 
 /**
  * @author by QXQ
  * @date 2021/2/28.
  */
 public class ClientTest {
+    private HelloService service;
+
     public static void main(String[] args) {
-        RpcClientProxy proxy = new RpcClientProxy(9000, "127.0.0.1");
+        RpcClient client = new NettyRpcClient(8385,"127.0.0.1");
+        RpcClientProxy proxy = new RpcClientProxy(client);
         HelloService service = proxy.getProxy(HelloService.class);
         HelloObject object = new HelloObject();
         object.setGreeting("Niubi");
