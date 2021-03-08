@@ -14,7 +14,7 @@ public class ClientTest {
     private HelloService service;
 
     public static void main(String[] args) {
-        RpcClient client = new NettyRpcClient(8385,"127.0.0.1");
+        RpcClient client = new NettyRpcClient();
         RpcClientProxy proxy = new RpcClientProxy(client);
         HelloService service = proxy.getProxy(HelloService.class);
         HelloObject object = new HelloObject();
